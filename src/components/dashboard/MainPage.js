@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { getQuestions } from "../../actions";
 
 import Questions from "./Questions";
 
-function MainPage({ allQuestions, users, currentUser, getQuestions }) {
-  useEffect(() => {
-    getQuestions();
-  }, [getQuestions]);
+function MainPage({ allQuestions, users, currentUser }) {
   const [activeItem, setActiveItem] = useState("unanswered");
   const answeredQuestions = Object.keys(allQuestions).filter((aq) => {
     return Object.keys(users[currentUser].answers).find((q) => q === aq);
@@ -60,4 +56,4 @@ const mapStateToProps = ({ questionsReducer, getUsers, authReducer }) => {
   };
 };
 
-export default connect(mapStateToProps, { getQuestions })(MainPage);
+export default connect(mapStateToProps)(MainPage);

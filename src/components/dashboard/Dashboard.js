@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+import { getQuestions } from "../../actions";
 
 import HeaderMenu from "./HeaderMenu";
 import MainPage from "./MainPage";
@@ -8,7 +10,11 @@ import NewQuestion from "./NewQuestion";
 import PageNotFound from "./PageNotFound";
 import Question from "./Question";
 
-const Dashboard = (props) => {
+const Dashboard = ({ getQuestions }) => {
+  useEffect(() => {
+    getQuestions();
+    console.log("I get questions");
+  }, [getQuestions]);
   return (
     <div className="ui container left aligned">
       <Route component={HeaderMenu} />
@@ -24,4 +30,4 @@ const Dashboard = (props) => {
   );
 };
 
-export default Dashboard;
+export default connect(null, { getQuestions })(Dashboard);
