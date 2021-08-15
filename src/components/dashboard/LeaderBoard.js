@@ -4,23 +4,33 @@ import { connect } from "react-redux";
 const LeaderBoard = (props) => {
   const { allUsers } = props;
 
+  const usersHolder = Object.values(allUsers)
+    .map((user) => {
+      return {
+        ...user,
+        totalq: user.questions.length + Object.keys(user.answers).length,
+      };
+    })
+    .sort((a, b) => b.totalq - a.totalq);
+
+  console.log(usersHolder);
   const renderUsers = () => {
-    return Object.keys(allUsers).map((user) => {
+    return usersHolder.map((user) => {
       return (
-        <div key={user} className="ui item">
+        <div key={user.id} className="ui item">
           <div className="image">
-            <img src={allUsers[user].avatarURL} alt="user avatar" />
+            <img src={user.avatarURL} alt="user avatar" />
           </div>
           <div className="content" style={{ padding: "40px" }}>
-            <h3 className="header">{allUsers[user].name}</h3>
+            <h3 className="header">{user.name}</h3>
             <div className="meta">
-              <span>Questions Asked: {allUsers[user].questions.length}</span>
+              <span>Questions Asked: {user.questions.length}</span>
             </div>
             <div className="description">
               <p></p>
             </div>
             <div className="extra">
-              Answers: {Object.keys(allUsers[user].answers).length}
+              Answers: {Object.keys(user.answers).length}
             </div>
           </div>
           <div
@@ -28,10 +38,7 @@ const LeaderBoard = (props) => {
             className="right floated item"
           >
             <h4>Total:</h4>
-            <h2>
-              {allUsers[user].questions.length +
-                Object.keys(allUsers[user].answers).length}
-            </h2>
+            <h2>{user.totalq}</h2>
           </div>
         </div>
       );

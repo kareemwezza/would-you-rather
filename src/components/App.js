@@ -24,7 +24,7 @@ const App = (props) => {
       </Router>
       <div
         className="ui vertical footer segment"
-        style={{ position: "absolute", bottom: "0" }}
+        style={{ position: "absolute" }}
       >
         <div className="ui container">
           &copy; Would You Rather ?. All Rights Reserved for{" "}
