@@ -5,6 +5,8 @@ const authReducer = (
   switch (action.type) {
     case "LOGIN":
       return { isAuthanticated: true, user: action.payload };
+    case "SIGN_UP":
+      return { isAuthanticated: true, user: action.payload.id };
     case "SIGN_OUT":
       return { isAuthanticated: false, user: null };
     default:

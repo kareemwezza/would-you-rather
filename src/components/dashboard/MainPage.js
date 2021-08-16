@@ -5,6 +5,11 @@ import Questions from "./Questions";
 
 function MainPage({ allQuestions, users, currentUser }) {
   const [activeItem, setActiveItem] = useState("unanswered");
+  const sortedQuestions = Object.values(allQuestions).sort(
+    (a, b) => b.timestamp - a.timestamp
+  );
+  console.log(sortedQuestions);
+
   const answeredQuestions = Object.keys(allQuestions).filter((aq) => {
     return Object.keys(users[currentUser].answers).find((q) => q === aq);
   });

@@ -22,10 +22,7 @@ const App = (props) => {
           <PrivateRoute path="/" component={Dashboard} />
         </Switch>
       </Router>
-      <div
-        className="ui vertical footer segment"
-        style={{ position: "absolute" }}
-      >
+      <div className="ui vertical footer segment">
         <div className="ui container">
           &copy; Would You Rather ?. All Rights Reserved for{" "}
           <strong>Kareem Fouad</strong>

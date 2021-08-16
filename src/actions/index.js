@@ -13,7 +13,7 @@ export const loginUser = (userId) => {
 
 export const registerUser = (newUser) => async (dispatch) => {
   const response = await api._createUser(newUser);
-  dispatch({ type: "LOGIN", payload: response.id });
+  dispatch({ type: "SIGN_UP", payload: response });
 };
 
 export const signOutUser = () => {

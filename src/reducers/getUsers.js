@@ -2,6 +2,8 @@ const getUsers = (state = {}, action) => {
   switch (action.type) {
     case "GET_USERS":
       return action.payload;
+    case "SIGN_UP":
+      return { ...state, [action.payload.id]: action.payload };
     case "USER_ANSWERS_QUESTION":
       return {
         ...state,
