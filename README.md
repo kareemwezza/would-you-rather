@@ -1,4 +1,11 @@
-<<<<<<< HEAD
+# Would you rather ?
+
+your web app to add polls to users and answer them easily.
+
+# Why creating this app ?
+
+This app is created as graduation project for Udacity Nanodegree Program Web development Advanced Track.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,8 +75,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
+# This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # would-you-rather
+
 add your surveys easily with would you rather app
->>>>>>> cd89c215ce4f55590ebbf4b8fdcecbd338b3e8f8
+
+> > > > > > > cd89c215ce4f55590ebbf4b8fdcecbd338b3e8f8
