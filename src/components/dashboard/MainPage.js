@@ -10,13 +10,15 @@ function MainPage({ allQuestions, users, currentUser }) {
   );
   console.log(sortedQuestions);
 
-  const answeredQuestions = Object.keys(allQuestions).filter((aq) => {
-    return Object.keys(users[currentUser].answers).find((q) => q === aq);
+  const answeredQuestions = sortedQuestions.filter(({ id }) => {
+    return Object.keys(users[currentUser].answers).find((aId) => aId === id);
   });
 
-  const unansweredQuestions = Object.keys(allQuestions).filter((aq) => {
-    return Object.keys(users[currentUser].answers).indexOf(aq) === -1;
+  const unansweredQuestions = sortedQuestions.filter(({ id }) => {
+    return Object.keys(users[currentUser].answers).indexOf(id) === -1;
   });
+
+  console.log(unansweredQuestions);
 
   return (
     <div>
