@@ -24,10 +24,10 @@ const HeaderMenu = (props) => {
       <Link to="/" className={handleActiveItem("/")}>
         Home
       </Link>
-      <Link to="/new-question" className={handleActiveItem("/new-question")}>
+      <Link to="/add" className={handleActiveItem("/new-question")}>
         New Question
       </Link>
-      <Link to="/leader-board" className={handleActiveItem("/leader-board")}>
+      <Link to="/leaderboard" className={handleActiveItem("/leaderboard")}>
         LeaderBoard
       </Link>
       <div className="right menu">

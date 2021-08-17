@@ -38,7 +38,7 @@ const LeaderBoard = (props) => {
             className="right floated item"
           >
             <h4>Total:</h4>
-            <h2>{user.totalq}</h2>
+            <h3 className="ui teal circular label huge">{user.totalq}</h3>
           </div>
         </div>
       );

@@ -20,9 +20,9 @@ const Dashboard = ({ getQuestions }) => {
       <Route component={HeaderMenu} />
       <Switch>
         <Route path="/" exact component={MainPage} />
-        <Route path="/leader-board" component={LeaderBoard} />
-        <Route path="/new-question" component={NewQuestion} />
-        <Route path="/question/:id" component={Question} />
+        <Route path="/leaderboard" component={LeaderBoard} />
+        <Route path="/add" component={NewQuestion} />
+        <Route path="/questions/:id" component={Question} />
         <Route path="/404" component={PageNotFound} />
         <Redirect to="/404" />
       </Switch>

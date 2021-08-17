@@ -7,7 +7,7 @@ function Questions({ questions, allQuestions, users }) {
     return questions.map((question) => {
       return (
         <div key={question} className="column">
-          <Link className="ui card" to={`/question/${question}`}>
+          <Link className="ui card" to={`/questions/${question}`}>
             <div className="content">
               <div className="header">Would you rather ..?</div>
               <div className="description">

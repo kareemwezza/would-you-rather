@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import AnsweredQuestion from "./AnsweredQuestion";
 import UnAnsweredQuestion from "./UnAnsweredQuestion";
 
@@ -7,6 +8,9 @@ function Question(props) {
   const { allUsers, authedUser } = props;
   const questionId = props.match.params.id;
   const showedQuestion = props.allQuestions[questionId];
+  if (!showedQuestion) {
+    return <Redirect to="/404" />;
+  }
   const totalVotes =
     showedQuestion.optionOne.votes.length +
     showedQuestion.optionTwo.votes.length;
