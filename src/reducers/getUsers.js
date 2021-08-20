@@ -4,6 +4,16 @@ const getUsers = (state = {}, action) => {
       return action.payload;
     case "SIGN_UP":
       return { ...state, [action.payload.id]: action.payload };
+    case "SAVE_QUESTION":
+      return {
+        ...state,
+        [action.payload.author]: {
+          ...state[action.payload.author],
+          questions: state[action.payload.author].questions.concat(
+            action.payload.id
+          ),
+        },
+      };
     case "USER_ANSWERS_QUESTION":
       return {
         ...state,

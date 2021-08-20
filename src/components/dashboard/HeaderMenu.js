@@ -6,7 +6,6 @@ import { signOutUser } from "../../actions";
 const HeaderMenu = (props) => {
   const handleSignOut = () => {
     props.signOutUser();
-    window.location.reload();
   };
 
   const handleActiveItem = (to) => {

@@ -8,8 +8,27 @@ function Question(props) {
   const { allUsers, authedUser } = props;
   const questionId = props.match.params.id;
   const showedQuestion = props.allQuestions[questionId];
-  if (!showedQuestion) {
+  if (Object.keys(props.allQuestions).length && !showedQuestion) {
     return <Redirect to="/404" />;
+  }
+  if (!Object.keys(props.allQuestions).length) {
+    return (
+      <div className="ui segment">
+        <div className="ui placeholder">
+          <div className="image header">
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
+          <div className="paragraph">
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
+        </div>
+      </div>
+    );
   }
   const totalVotes =
     showedQuestion.optionOne.votes.length +

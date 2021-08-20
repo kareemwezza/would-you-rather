@@ -26,7 +26,7 @@ function AnsweredQuestion(props) {
         >
           <div className="progress">{handleProgressValue("optionOne")}</div>
         </div>
-        <div className="label">{showedQuestion.optionOne.text}</div>
+        <div className="label">{`${showedQuestion.optionOne.votes.length} voted for ${showedQuestion.optionOne.text}`}</div>
       </div>
       <div
         className={
@@ -41,7 +41,7 @@ function AnsweredQuestion(props) {
         >
           <div className="progress">{handleProgressValue("optionTwo")}</div>
         </div>
-        <div className="label">{showedQuestion.optionTwo.text}</div>
+        <div className="label">{`${showedQuestion.optionTwo.votes.length} voted for ${showedQuestion.optionTwo.text}`}</div>
       </div>
     </div>
   );

@@ -41,7 +41,6 @@ export const saveAnswer =
   async (dispatch, getState) => {
     const authedUser = getState().authReducer.user;
     const response = await api._saveQuestionAnswer({ authedUser, qid, answer });
-    console.log(authedUser, qid, answer);
     dispatch({ type: "SAVE_ANSWER", payload: response });
     dispatch({
       type: "USER_ANSWERS_QUESTION",
