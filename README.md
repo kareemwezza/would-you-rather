@@ -1,10 +1,20 @@
 # Would you rather ?
 
-your web app to add polls to users and answer them easily.
+Let's play "Would you rather ?" game.
+
+# Project OverView
+
+In the "Would You Rather?" Project, we build a web app that lets a user play the “Would You Rather?” game. The game goes like this: A user is asked a question in the form: “Would you rather _option A_ or _option B_ ?”. Answering "neither" or "both" is against the rules.
+
+In this app, users will be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
 
 # Why creating this app ?
 
-This app is created as graduation project for Udacity Nanodegree Program Web development Advanced Track.
+This app is created as a graduation project for Udacity Nanodegree Program Web development Advanced Track.
+
+# Live Preview
+
+You can preview the would you rather web app live **_[HERE]_**(https://would-you-rather-rho.vercel.app)
 
 # Getting Started with Create React App
 
@@ -80,5 +90,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 # would-you-rather
 
 add your surveys easily with would you rather app
-
-> > > > > > > cd89c215ce4f55590ebbf4b8fdcecbd338b3e8f8
