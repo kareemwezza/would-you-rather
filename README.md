@@ -14,7 +14,7 @@ This app is created as a graduation project for Udacity Nanodegree Program Web d
 
 # Live Preview
 
-You can preview the would you rather web app live **_[HERE]_**(https://would-you-rather-rho.vercel.app)
+You can preview the would you rather web app live [HERE](https://would-you-rather-rho.vercel.app)
 
 # Getting Started with Create React App
 

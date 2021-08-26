@@ -72,7 +72,9 @@ const LoginForm = ({ users, getUsers, handleLogin }) => {
         </div>
       </div>
       <button
-        className="ui red button fluid"
+        className={
+          selectedUser ? "ui red fluid button" : "ui red fluid button disabled"
+        }
         style={{ marginTop: "20px" }}
         onClick={() => {
           handleLogin(selectedUser);

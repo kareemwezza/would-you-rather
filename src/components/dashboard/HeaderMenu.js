@@ -16,7 +16,7 @@ const HeaderMenu = (props) => {
   };
 
   return (
-    <div className="ui large menu fluid">
+    <div className="ui large menu stackable">
       <div className="item">
         <img alt="App logo" src="/images/icon.svg"></img>
       </div>
