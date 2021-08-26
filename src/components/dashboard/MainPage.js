@@ -8,7 +8,6 @@ function MainPage({ allQuestions, users, currentUser }) {
   const sortedQuestions = Object.values(allQuestions).sort(
     (a, b) => b.timestamp - a.timestamp
   );
-  console.log(sortedQuestions);
 
   const answeredQuestions = sortedQuestions.filter(({ id }) => {
     return Object.keys(users[currentUser].answers).find((aId) => aId === id);
@@ -18,7 +17,27 @@ function MainPage({ allQuestions, users, currentUser }) {
     return Object.keys(users[currentUser].answers).indexOf(id) === -1;
   });
 
-  console.log(unansweredQuestions);
+  const handleQuestionsLoading = () => {
+    if (Object.keys(allQuestions).length) {
+      return (
+        <div className="ui bottom attached segment">
+          {activeItem === "answered" ? (
+            <Questions questions={answeredQuestions} />
+          ) : (
+            <Questions questions={unansweredQuestions} />
+          )}
+        </div>
+      );
+    }
+    return (
+      <div className="ui bottom attached segment" style={{ height: "30vh" }}>
+        <div className="ui active inverted dimmer">
+          <div className="ui text loader">Loading...</div>
+        </div>
+        <p></p>
+      </div>
+    );
+  };
 
   return (
     <div>
@@ -44,13 +63,7 @@ function MainPage({ allQuestions, users, currentUser }) {
           </span>
         </div>
       </div>
-      <div className="ui bottom attached segment">
-        {activeItem === "answered" ? (
-          <Questions questions={answeredQuestions} />
-        ) : (
-          <Questions questions={unansweredQuestions} />
-        )}
-      </div>
+      {handleQuestionsLoading()}
     </div>
   );
 }

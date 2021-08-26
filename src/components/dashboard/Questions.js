@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 function Questions({ questions, allQuestions, users }) {
   const renderQuestions = () => {
     return questions.map((question) => {
-      console.log(question);
       return (
         <div key={question.id} className="column">
           <Link className="ui card" to={`/questions/${question.id}`}>

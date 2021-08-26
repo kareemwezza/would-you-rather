@@ -13,7 +13,6 @@ import Question from "./Question";
 const Dashboard = ({ getQuestions }) => {
   useEffect(() => {
     getQuestions();
-    console.log("I get questions");
   }, [getQuestions]);
   return (
     <div className="ui container left aligned">
