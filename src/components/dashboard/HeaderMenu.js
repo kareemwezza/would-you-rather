@@ -33,11 +33,11 @@ const HeaderMenu = (props) => {
         <div className="item">
           <img
             className="ui mini circular image"
-            src={props.users[props.currentUser].avatarURL}
+            src={props.allUsers[props.authedUser].avatarURL}
             alt="user avatar"
           />
           <p style={{ marginLeft: "5px" }}>
-            {props.users[props.currentUser].name}
+            {props.allUsers[props.authedUser].name}
           </p>
         </div>
         <div className="item">
@@ -51,7 +51,7 @@ const HeaderMenu = (props) => {
 };
 
 const mapStateToProps = ({ getUsers, authReducer }) => {
-  return { users: getUsers, currentUser: authReducer.user };
+  return { allUsers: getUsers, authedUser: authReducer.user };
 };
 
 export default connect(mapStateToProps, { signOutUser })(HeaderMenu);

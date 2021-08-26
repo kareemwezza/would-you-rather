@@ -6,7 +6,7 @@ function AnsweredQuestion(props) {
   const showedQuestion = allQuestions[questionId];
   const handleProgressValue = (option) => {
     const progress = (showedQuestion[option].votes.length / votes) * 100;
-    return `${progress}%`;
+    return `${progress.toFixed(1)}%`;
   };
 
   const userAnswer = allUsers[authedUser].answers[questionId];

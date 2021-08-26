@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import { loginUser } from "../actions";
@@ -10,9 +10,6 @@ import PrivateRoute from "../PrivateRoute";
 import RegisterUser from "./RegisterUser";
 
 const App = (props) => {
-  useEffect(() => {
-    console.log(sessionStorage.getItem("userId"));
-  }, []);
   return (
     <div className="ui container center aligned">
       <Router history={history}>

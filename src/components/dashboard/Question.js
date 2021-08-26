@@ -77,8 +77,8 @@ function Question(props) {
 const mapStateToProps = ({ questionsReducer, authReducer, getUsers }) => {
   return {
     allQuestions: questionsReducer,
-    authedUser: authReducer.user,
     allUsers: getUsers,
+    authedUser: authReducer.user,
   };
 };
 

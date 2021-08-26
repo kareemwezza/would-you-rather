@@ -6,7 +6,6 @@ import { loginUser } from "../actions";
 import LoginForm from "./LoginForm";
 
 const Login = (props) => {
-  console.log(props);
   const [redirectToPage, setRedirectToPage] = useState(false);
   const { from } = props.location.state || { from: { pathname: "/" } };
   const handleLogin = (user) => {

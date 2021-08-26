@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 
 import Questions from "./Questions";
 
-function MainPage({ allQuestions, users, currentUser }) {
+function MainPage({ allQuestions, allUsers, authedUser }) {
   const [activeItem, setActiveItem] = useState("unanswered");
   const sortedQuestions = Object.values(allQuestions).sort(
     (a, b) => b.timestamp - a.timestamp
   );
 
   const answeredQuestions = sortedQuestions.filter(({ id }) => {
-    return Object.keys(users[currentUser].answers).find((aId) => aId === id);
+    return Object.keys(allUsers[authedUser].answers).find((aId) => aId === id);
   });
 
   const unansweredQuestions = sortedQuestions.filter(({ id }) => {
-    return Object.keys(users[currentUser].answers).indexOf(id) === -1;
+    return Object.keys(allUsers[authedUser].answers).indexOf(id) === -1;
   });
 
   const handleQuestionsLoading = () => {
@@ -71,8 +71,8 @@ function MainPage({ allQuestions, users, currentUser }) {
 const mapStateToProps = ({ questionsReducer, getUsers, authReducer }) => {
   return {
     allQuestions: questionsReducer,
-    users: getUsers,
-    currentUser: authReducer.user,
+    allUsers: getUsers,
+    authedUser: authReducer.user,
   };
 };
 

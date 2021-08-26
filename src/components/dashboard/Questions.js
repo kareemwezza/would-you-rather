@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-function Questions({ questions, allQuestions, users }) {
+function Questions({ questions, allUsers }) {
   const renderQuestions = () => {
     return questions.map((question) => {
       return (
@@ -20,7 +20,7 @@ function Questions({ questions, allQuestions, users }) {
               <div className="right floated author">
                 <img
                   className="ui avatar image"
-                  src={users[question.author].avatarURL}
+                  src={allUsers[question.author].avatarURL}
                   alt="user avatar"
                 />{" "}
                 {question.author}
@@ -54,8 +54,8 @@ function Questions({ questions, allQuestions, users }) {
   );
 }
 
-const mapStateToProps = ({ questionsReducer, getUsers }) => {
-  return { allQuestions: questionsReducer, users: getUsers };
+const mapStateToProps = ({ getUsers }) => {
+  return { allUsers: getUsers };
 };
 
 export default connect(mapStateToProps)(Questions);
